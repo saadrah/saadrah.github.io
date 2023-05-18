@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(255, 11, 243);
+}
+
+body a {
+    text-decoration: none;
+    font-size: 40px;
+    padding-right: 100px;
+}
+
+body a:hover{
+    color:seagreen;
+    font-family: lucida Sans;
+}
+
+body li {
+    color: red;
+    font-size: 32px;
+}
+
+img {
+    padding-left: 50px;
+    padding-bottom: 10%;
+}
+
+    /* Style for the navigation bar */
+    .navbar {
+        background-color: #333;
+        overflow: hidden;
+      }
+      
+      /* Style for the navigation links */
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      /* Style for the active link */
+      .active {
+        background-color: #4CAF50;
+      }
