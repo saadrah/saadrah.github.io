@@ -46,25 +46,22 @@
             transform: translate(-50%, -50%);
             background-image: url('curry_sprite.png');
             background-position: 0 0;
-            animation: movePlayer 5s infinite linear;
             cursor: pointer;
+            animation: movePlayer 5s infinite;
         }
 
         @keyframes movePlayer {
-            0% {
+            0%, 100% {
                 transform: translate(-50%, -50%);
             }
             25% {
-                transform: translate(calc(-50% + 100px), -50%);
-            }
-            50% {
                 transform: translate(calc(-50% + 100px), calc(-50% + 100px));
             }
-            75% {
-                transform: translate(-50%, calc(-50% + 100px));
+            50% {
+                transform: translate(calc(-50% + 200px), -50%);
             }
-            100% {
-                transform: translate(-50%, -50%);
+            75% {
+                transform: translate(-50%, calc(-50% + 200px));
             }
         }
 
@@ -77,17 +74,17 @@
         }
 
         .hoop {
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-image: url('basketball_hoop.png');
-        background-position: center;
-        background-size: contain;
-        animation: hoopAnimation 4s infinite linear;
-    }
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('basketball_hoop.png');
+            background-position: center;
+            background-size: contain;
+            animation: hoopAnimation 4s infinite linear;
+        }
 
         @keyframes hoopAnimation {
             0% {
