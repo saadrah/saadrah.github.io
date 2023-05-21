@@ -1,12 +1,43 @@
 <html>
-    <head>
-        <title>Saad's page</title>
-        <link rel="stylesheet" href="./../style.css">
-    </head>
-    <body>
-        <a = href="./../index.html"><h1>HOME</h1></a>
-        <a href = "page1.html">Page 1</a>
-        <a href = "page2.html">Page 2</a>
-        <img src="https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https://oldnorthbanter.com/files/2016/12/9733375-stephen-curry-nba-golden-state-warriors-utah-jazz.jpg" alt="Warrios" title="Stephen Curry">
-    </body>
+<head>
+    <title>Saad's page</title>
+    <link rel="stylesheet" href="./../style.css">
+    <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        .player {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('curry_sprite.png');
+            background-position: 0 0;
+            animation: shoot 0.8s steps(8) infinite;
+        }
+
+        @keyframes shoot {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -800px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="./../index.html"><h1>HOME</h1></a>
+    <a href="page1.html">Page 1</a>
+    <a href="page2.html">Page 2</a>
+    <div class="container">
+        <div class="player"></div>
+    </div>
+    <img src="https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https://oldnorthbanter.com/files/2016/12/9733375-stephen-curry-nba-golden-state-warriors-utah-jazz.jpg" alt="Warriors" title="Stephen Curry">
+</body>
 </html>
