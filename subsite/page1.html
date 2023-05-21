@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Stephen Curry Page</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Saad's page</title>
+    <link rel="stylesheet" href="./../style.css">
     <style>
         .container {
             width: 100%;
@@ -39,6 +38,30 @@
                 top: 50%;
                 left: 100%;
                 transform: translate(0, -50%);
+            }
+        }
+
+        .basketball {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background-image: url('basketball.png');
+            background-size: cover;
+            animation: shoot 1s linear forwards;
+        }
+
+        @keyframes shoot {
+            0% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                top: -100px;
+                left: 200%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
             }
         }
     </style>
@@ -90,30 +113,12 @@
     </script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="page1.html">Page 1</a></li>
-                <li><a href="page2.html">Page 2</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h1>Stephen Curry - 3-Point Animation</h1>
-            <div class="container">
-                <div
-                                     <div class="player"></div>
-            </div>
-            <p>Click on Stephen Curry to see him shoot 3-pointers!</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Stephen Curry Page. All rights reserved.</p>
-    </footer>
+    <a href="./../index.html"><h1>HOME</h1></a>
+    <a href="page1.html">Page 1</a>
+    <a href="page2.html">Page 2</a>
+    <div class="container">
+        <div class="player"></div>
+    </div>
+    <img src="https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https://oldnorthbanter.com/files/2016/12/9733375-stephen-curry-nba-golden-state-warriors-utah-jazz.jpg" alt="Warriors" title="Stephen Curry">
 </body>
 </html>
-
