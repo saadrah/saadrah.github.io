@@ -67,10 +67,56 @@
             margin: 20px auto;
             border-radius: 50%;
         }
+
+        .hoop {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('basketball_hoop.png');
+            background-position: 0 0;
+            animation: hoopAnimation 4s infinite linear;
+        }
+
+        @keyframes hoopAnimation {
+            0% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            100% {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        .basketball {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background-image: url('basketball.png');
+            background-size: cover;
+            animation: shoot 1s linear forwards;
+        }
+
+        @keyframes shoot {
+            0% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                top: 10%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const player = document.querySelector(".player");
+            const hoop = document.querySelector(".hoop");
 
             player.addEventListener("click", function(event) {
                 createBasketballs(event.clientX, event.clientY);
@@ -90,10 +136,9 @@
                 const balls = document.querySelectorAll(".basketball");
 
                 balls.forEach(function(ball) {
-                    const randomAngle = Math.random() * 360;
                     const randomDistance = Math.random() * 200 + 100;
-                    const translateX = Math.cos(randomAngle) * randomDistance;
-                    const translateY = Math.sin(randomAngle) * randomDistance;
+                    const translateX = hoop.getBoundingClientRect().left - ball.getBoundingClientRect().left;
+                    const translateY = hoop.getBoundingClientRect().top - ball.getBoundingClientRect().top;
 
                     ball.animate(
                         [
@@ -128,6 +173,7 @@
 
     <div class="container">
         <div class="player"></div>
+        <div class="hoop"></div>
     </div>
     <img src="https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https://oldnorthbanter.com/files/2016/12/9733375-stephen-curry-nba-golden-state-warriors-utah-jazz.jpg" alt="Warriors" title="Stephen Curry">
 </body>
